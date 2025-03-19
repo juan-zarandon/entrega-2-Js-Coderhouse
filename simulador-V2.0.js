@@ -6,12 +6,21 @@
 //aplicacion de los nuevos conceptos:
 // 1 - Se aplica lo aprendido sobre Storage y se guarda el carrito en el local storage.
 // 2 - se hace uso de JSON, stringify y parse para poder pasar a string el array y luego volverlo a convertir en un array.
+// 3 Se agrega una funcion constructora para crear el obeto juegos y se crea un array de juegos disponibles usando esa funcion constructora
+
+// Función constructora para crear objetos "Juego"
+function Juego(nombre, precio) {
+  this.nombre = nombre;
+  this.precio = precio;
+}
+
+// Crear juegos usando la función constructora
 const juegosDisponibles = [
-  { nombre: "FIFA 23", precio: 60 },
-  { nombre: "God of War", precio: 70 },
-  { nombre: "Minecraft", precio: 30 },
-  { nombre: "Call of Duty", precio: 65 },
-  { nombre: "Mario Kart", precio: 50 },
+  new Juego("FIFA 23", 60),
+  new Juego("God of War", 70),
+  new Juego("Minecraft", 30),
+  new Juego("Call of Duty", 65),
+  new Juego("Mario Kart", 50),
 ];
 
 // Cargar el carrito desde localStorage al inicio para recordar si tenia compras en el carro el usuario al volver a la página o recargarla
