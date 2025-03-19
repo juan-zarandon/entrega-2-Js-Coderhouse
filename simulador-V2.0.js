@@ -7,6 +7,7 @@
 // 1 - Se aplica lo aprendido sobre Storage y se guarda el carrito en el local storage.
 // 2 - se hace uso de JSON, stringify y parse para poder pasar a string el array y luego volverlo a convertir en un array.
 // 3 Se agrega una funcion constructora para crear el obeto juegos y se crea un array de juegos disponibles usando esa funcion constructora
+// 4 - creamos un mensaje de confirmacion para el usuario que se muestra en el html asi usamos el DOM para efectuar la salida de resultados de la compra. Quitamos con esto el alert de la ultima linea de la funcion calcularTotal
 
 // Función constructora para crear objetos "Juego"
 function Juego(nombre, precio) {
@@ -132,7 +133,12 @@ function calcularTotal(nombreUsuario) {
   console.log("===== RESUMEN DE COMPRA =====");
   console.log("Cliente: " + nombreUsuario);
   console.log(resumenCompra);
-  alert("¡Gracias por tu compra, " + nombreUsuario + "! Vuelve pronto.");
+  const mensaje = // creamos un mensaje de confirmacion para el usuario que se muestra en el html asi usamos el DOM para efectuar la salida de resultados de la compra
+    "¡Gracias por tu compra, " + nombreUsuario + "! Vuelve pronto.";
+  const mensajeConfirmacionElement = document.getElementById(
+    "mensaje-confirmacion"
+  );
+  mensajeConfirmacionElement.textContent = mensaje;
 }
 
 // Función para guardar el carrito en localStorage
